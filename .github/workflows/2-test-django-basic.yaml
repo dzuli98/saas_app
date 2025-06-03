@@ -1,0 +1,28 @@
+name: 1 - Hello World Github actions
+
+on:
+  workflow_dispatch:
+  push:
+    branch:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install requirements
+        run: |
+          python -m pip install pip --upgrade
+          python -m pip install -r requirements.txt
+      - name: Run tests
+        working-directory: ./src
+        run: |
+          python manage.py test
+
+
