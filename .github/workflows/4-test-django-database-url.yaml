@@ -32,8 +32,6 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Run tests
         working-directory: ./src
-        env:
-          DJANGO_SECRET_KEY: not-good
         run: |
-          python manage.py test
+          python manage.py test --keepdb
 
