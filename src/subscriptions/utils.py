@@ -43,7 +43,7 @@ def refresh_active_users_subscriptions(
     if days_left > -1:
         qs = qs.by_days_left(days_left)
     if day_start > -1 and day_end > -1:
-        qs = qs.by_days_range(day_start, day_end, verbose=verbose)
+        qs = qs.by_range(day_start, day_end, verbose=verbose)
     complete_count = 0
     qs_count = qs.count()
     
