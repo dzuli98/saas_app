@@ -42,7 +42,7 @@ jobs:
           --project-id '${{ env.NEON_PROJECT_ID }}' \
       - name: Database URL Env Val for new Github Actions branch
         run: |
-          MY_NEON_CONN_STRING = $(neonctl connection-string --branch '${{ env.NEON_GITHUB_BRANCH }}' \
+          MY_NEON_CONN_STRING=$(neonctl connection-string --branch '${{ env.NEON_GITHUB_BRANCH }}' \
           --project-id '${{ env.NEON_PROJECT_ID }}' --database-name 'test_neondb')
           echo "DATABASE_URL=$MY_NEON_CONN_STRING" >> $GITHUB_ENV 
       - name: Setup Django Secret DJANGO_SECRET_KEY
