@@ -43,6 +43,7 @@ jobs:
           python -m pip install pip --upgrade
           python -m pip install -r requirements.txt
       - name: Django Migrate Database
+        working-directory: ./src
         run: |
           python manage.py migrate 
       - name: Django Users Sync Stripe Subscriptions
