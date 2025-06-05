@@ -10,7 +10,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      DJANGO_DEBUG: 1
+      DJANGO_DEBUG: 0
+      STRIPE_TEST_OVERRIDE: 1
       NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
       NEON_PROD_BRANCH: 'main'
       NEON_GITHUB_BRANCH: 'gh-delete'
