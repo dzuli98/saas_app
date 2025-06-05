@@ -168,7 +168,7 @@ class UserSubscriptionQuerySet(models.QuerySet):
             current_period_end__lte=day_end
         )
     
-    def by_days_left(self, days_ago=3):
+    def by_days_ago(self, days_ago=3):
         now = timezone.now()
         in_n_days = now - datetime.timedelta(days=days_ago)
         day_start = in_n_days.replace(hour=0, minute=0, second=0, microsecond=0)
